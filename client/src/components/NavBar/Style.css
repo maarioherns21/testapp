@@ -1,0 +1,14 @@
+
+
+.nav {
+    padding: 20px;
+    background: rgb(165, 165, 165);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius:  15px;
+}
+
+.text {
+    text-decoration: none;
+}

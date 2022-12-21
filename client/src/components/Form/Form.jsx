@@ -8,7 +8,7 @@ import "./Form.css"
 const Form = () => {
 const user = JSON.parse(localStorage.getItem('token'))
 
-const [formData, setFormData] =useState({ name: "", body: "", creator: user?.username , images: "", video: ""  })
+const [formData, setFormData] =useState({ name: "", body: "", creator: user?._id , images: "", video: ""  })
 const [isPending, setIsPending] = useState(false);
 const navigate = useNavigate()
 

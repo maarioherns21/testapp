@@ -4,9 +4,9 @@ import ReactPlayer from "react-player"
 
 
 
-const MovieItem = ({ movie, handleDelete }) => {
-  
-  
+const MovieItem = ({ movie, handleDelete ,user}) => {
+ 
+  console.log(user?.username, movie.creator)
   
   return (
     <div>
@@ -15,10 +15,14 @@ const MovieItem = ({ movie, handleDelete }) => {
       <h2>{movie.body}</h2>
       <h3>{movie.creator}</h3>
       {movie.video && <ReactPlayer url={movie.video} />}
-      <Popup trigger={<button>Update</button>}>
-        <EditForm movie={movie} />
-      </Popup>
-      <button onClick={handleDelete}>Delete</button>
+      {user?._id === movie?.creator  && (
+        <div>
+          <Popup trigger={<button>Update</button>}>
+            <EditForm movie={movie} />
+          </Popup>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
+      )}
     </div>
   );
 };

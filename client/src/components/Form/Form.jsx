@@ -8,7 +8,7 @@ import "./Form.css"
 const Form = () => {
 const user = JSON.parse(localStorage.getItem('token'))
 
-const [formData, setFormData] =useState({ name: "", body: "", creator: "", images: "", video: ""  })
+const [formData, setFormData] =useState({ name: "", body: "", creator: user?.username , images: "", video: ""  })
 const [isPending, setIsPending] = useState(false);
 const navigate = useNavigate()
 
@@ -17,13 +17,7 @@ const navigate = useNavigate()
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  const movie = {
-    name: formData.name,
-    body: formData.body,
-    creator: user?._id,
-    images: formData.images,
-    video: formData.video,
-  };
+  const movie = { ...formData};
   setIsPending(true);
 await fetch("http://localhost:4000/movies/new", {
     method: "POST",
@@ -38,7 +32,7 @@ await fetch("http://localhost:4000/movies/new", {
 
 const clear = (e) => {
   e.preventDefault();
-  setFormData({ name: "", body: "", creator: "mario", images: "", video: "" });
+  setFormData({ name: "", body: "", creator: user?.username , images: "", video: "" });
 };
 
 

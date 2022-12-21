@@ -43,10 +43,10 @@ const EditForm  = ({movie}) =>{
         <form className="modal-content" onSubmit={handleSubmit}>
           <input value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required />
           <textarea value={formData.body} onChange={(e) => setFormData({...formData, body: e.target.value})}  />
-          <select value={formData.creator} onChange={(e) => setFormData({...formData, creator: e.target.value})} >
+          {/* <select value={formData.creator} onChange={(e) => setFormData({...formData, creator: e.target.value})} >
             <option value="mario">mario</option>
             <option value="mark">mark</option>
-          </select>
+          </select> */}
           <FileBase64 value={formData.images} type="file" multiple={false} onDone={({base64}) => setFormData({...formData , images: base64})} />
           <input value={formData.video} type="url" onChange={(e) => setFormData({...formData, video: e.target.value})}  />
           <button>{isPending ? "Updating.." : "Update Movie"}</button>

@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useState } from "react"
 import Pagination from "../Pagination/Pagination"
 import SearchBar from "../SearchBar/SearchBar"
@@ -26,7 +25,7 @@ return (
     <div>{isLoading ? "Loading..." : ""}</div>
     <SearchBar movies={movies} />
     <Movie  movies={currentMovies} title="All Movies" />
-    <Pagination totalMovies={movies.length} moviesPerPage={moviesPerPage} setCurrentPage={setCurrentPage} />
+    <Pagination totalMovies={movies.length} moviesPerPage={moviesPerPage} setCurrentPage={setCurrentPage} setMoviesPerPage={setMoviesPerPage} />
   </div>
 );
 }

@@ -1,6 +1,6 @@
-import Harry from "../assests/HarryPotter.jpg"
-import Thor from "../assests/Thor.jpg"
-import Ghost from "../assests/ghostbuster.png"
+// import Harry from "../assests/HarryPotter.jpg"
+// import Thor from "../assests/Thor.jpg"
+// import Ghost from "../assests/ghostbuster.png"
 import { useEffect } from "react";
 import { useState } from "react";
 

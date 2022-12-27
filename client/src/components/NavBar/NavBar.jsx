@@ -1,5 +1,4 @@
 import {Link} from "react-router-dom"
-import useToken from "../useToken/useToken"
 import './Style.css'
 
 const  NavBar = ({logout}) => {

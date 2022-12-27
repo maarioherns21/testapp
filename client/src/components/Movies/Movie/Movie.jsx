@@ -1,6 +1,6 @@
-import {Grid} from "@mui/material"
+// import {Grid} from "@mui/material"
 import MovieCard from "./MovieCard";
-import { Root, classes } from "./Styles";
+// import { Root, classes } from "./Styles";
 
 
 

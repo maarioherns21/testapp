@@ -1,13 +1,11 @@
-import Movies from "../../components/Movies/Movies"
 import {Route, Routes, BrowserRouter, Navigate} from "react-router-dom"
 import Home from "../Home/Home"
 import MovieDetails from "../../components/Movies/MovieDetails/MovieDetails"
 import NavBar from "../../components/NavBar/NavBar"
 import MyMovies from "../../components/MyMovies/MyMovies"
 import Form from '../../components/Form/Form'
-import LoginForm from "../../components/LoginForm/LoginForm"
+// import LoginForm from "../../components/LoginForm/LoginForm"
 import useToken from "../../components/useToken/useToken"
-import { useState } from "react"
 import SignUpPage from "../SignupPage/SignupPage"
 import LoginPage from "../LoginPage/LoginPage"
 

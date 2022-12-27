@@ -1,5 +1,5 @@
-import { Root, classes } from "./Styles"
-import {Card, CardActions, CardContent, Typography, CardMedia} from "@mui/material"
+// import { Root, classes } from "./Styles"
+// import {Card, CardActions, CardContent, Typography, CardMedia} from "@mui/material"
 import {Link} from 'react-router-dom'
 
 const MovieCard = ({movie}) => {

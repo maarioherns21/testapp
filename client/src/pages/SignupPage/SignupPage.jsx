@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FileBase64 from "react-file-base64";
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import "./SignupPage.css"
 
 const SignUpPage = ({setToken}) => {

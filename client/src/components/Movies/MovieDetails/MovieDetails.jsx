@@ -7,7 +7,7 @@ const MovieDetails = () => {
   const user = JSON.parse(localStorage.getItem("token"))
   const params = useParams();
   const { movies, isLoading, error } = useFetch();
-  const movie = movies.find((movie) => movie._id == params.id);
+  const movie = movies.find((movie) => movie._id === params.id);
   const navigate = useNavigate();
 
 

@@ -14,7 +14,9 @@ const searchByname = async () => {
   try {
     await movies.filter((movie) => {
       if (movie.name.toLowerCase().includes(input.toLowerCase())) {
-        setOutput((output) => [...output, movie]);
+      return  setOutput((output) => [...output, movie]);
+      } else {
+        return "no movies available"
       }
     });
   } catch (error) {
@@ -27,7 +29,10 @@ const searchByCreator = async () => {
   try {
     await movies.filter((movie) => {
       if (movie.creator.toLowerCase().includes(input.toLowerCase())) {
-        setOutput((output) => [...output, movie]);
+     return   setOutput((output) => [...output, movie]);
+      }
+      else {
+        return "no movies available"
       }
     });
   } catch (error) {
@@ -40,7 +45,10 @@ const searchById = async () => {
   try {
     await movies.filter((movie) => {
       if (movie._id.toLowerCase().includes(input.toLowerCase())) {
-        setOutput((output) => [...output, movie]);
+      return  setOutput((output) => [...output, movie]);
+      }
+      else {
+        return "no movies available"
       }
     });
   } catch (error) {
@@ -54,6 +62,7 @@ const searchById = async () => {
     searchById();
     searchByname();
     searchByCreator();
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
 
 

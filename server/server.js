@@ -10,6 +10,7 @@ import usersIndex from "./routes/users.js";
 const app = express();
 dotenv.config();
 
+
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
@@ -20,17 +21,23 @@ app.use("/user", usersIndex);
 
 const SERVER = process.env.CONNECTION_URL;
 
+
+
+const PORT = process.env.PORT;
+
+
+
+
+mongoose.set('strictQuery', false);
+
 mongoose
   .connect(SERVER, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log("DB Connected");
+    app.listen(PORT, () => {
+      console.log(`Express is listening on Port ${PORT} and connected to DB`);
+    });
   })
   .catch((error) => {
     console.log(error.massage);
   });
 
-const PORT = process.env.PORT;
-
-app.listen(PORT, () => {
-  console.log(`Express is listening on Port ${PORT}`);
-});

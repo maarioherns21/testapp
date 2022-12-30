@@ -4,6 +4,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
+
+
 export default function useFetch() {
   // const movies = [
   //     {name: "beatle Juice",  body: "sell" , creator: "mario" , images: "",  _id:1 },
@@ -12,10 +14,6 @@ export default function useFetch() {
   //     {name: "Avengarers",  body: "super nice movie" , creator: "marc" , images: "",  _id:14},
   // ]
 
-
-
-
-
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +21,7 @@ export default function useFetch() {
 
 
   useEffect(() => {
-    fetch("http://localhost:4000/movies")
+    fetch("http://0.0.0.0:4000/movies")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -1,16 +1,14 @@
 import express from "express";
-import CTRL from "../controllers/index.js";
+import { createMovie, deleteMovie, index, updateMovie } from "../controllers/index.js";
 const router = express.Router();
 
 
+router.get("/", index);
 
+router.post("/new", createMovie);
 
-router.get("/", CTRL.index);
+router.patch("/:id", updateMovie);
 
-router.post("/new" , CTRL.createMovie);
-
-router.patch("/:id" , CTRL.updateMovie);
-
-router.delete("/:id", CTRL.deleteMovie);
+router.delete("/:id", deleteMovie);
 
 export default router;

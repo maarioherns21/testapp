@@ -1,7 +1,7 @@
 // import { Link, useNavigate, useParams } from "react-router-dom";
 import Movie from "../Movies/Movie/Movie";
 import useFetch from "../useFetch/useFetch";
-
+import React from 'react';
 
 
 
@@ -10,14 +10,12 @@ import useFetch from "../useFetch/useFetch";
 const MyMovies = ({logout}) => {
   const user  = JSON.parse(localStorage.getItem("token"))
   const {movies, isLoading, error} =useFetch()
-  const movie  = movies.filter((movie) => movie.creator === user?._id )
-
-
+  const movie  = movies.filter((movie) => movie.creator === user?.result._id )
 
   const handleDelete = async () => {
     try {
       if (window.confirm("Are you Sure you wish to Continue?")) {
-        await fetch(`http://localhost:4000/user/${user?._id}`, {
+        await fetch(`http://0.0.0.0:4000/movies/${user?.result._id}`, {
         method: "DELETE",
       }).then(() => {
        logout()

@@ -2,7 +2,7 @@ import mySchema from "../model/movies.js"
 
 
 // index form movies
-const index = async (req, res) => {
+export const index = async (req, res) => {
   const movies = mySchema.Movie;
 
   try {
@@ -18,12 +18,12 @@ const index = async (req, res) => {
 
 
 //this creates a movie a user 
-const createMovie = async (req, res) => {
-  const movie =  req.body
+export const createMovie = async (req, res) => {
+  const movie = req.body;
 
-  const newMovie = new mySchema.Movie({ ...movie, user : req.userId, createdAt: new Date().toISOString() });
-  
-  console.log(newMovie)
+  const newMovie = new mySchema.Movie({ ...movie, user: req.userId, createdAt: new Date().toISOString(),});
+
+  console.log(newMovie);
   try {
     const saveMovie = await newMovie.save();
 
@@ -53,7 +53,7 @@ const createMovie = async (req, res) => {
 //  };
 
 
-const updateMovie = async (req, res) => {
+export const updateMovie = async (req, res) => {
   const { name, body, creator, images, video } = req.body;
   const { id } = req.params;
   const updateMovie = { name, body, creator, images, video, _id: id };
@@ -72,7 +72,7 @@ const updateMovie = async (req, res) => {
 
 
 
-const deleteMovie = async (req, res) => {
+export const deleteMovie = async (req, res) => {
   const { id } = req.params;
   try {
     const deleteMovie = await mySchema.Movie.findByIdAndDelete(id);
@@ -85,10 +85,6 @@ const deleteMovie = async (req, res) => {
   }
 };
 
-
-const CTRL =  {"index": index , "createMovie": createMovie, "updateMovie": updateMovie, "deleteMovie": deleteMovie}
-
-export default CTRL
 
 
 

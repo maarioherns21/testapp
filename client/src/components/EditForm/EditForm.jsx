@@ -1,32 +1,27 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import FileBase64 from "react-file-base64";
 import { useNavigate, useParams } from "react-router-dom";
 import "./EditForm.css"
 
 
-
 const EditForm  = ({movie}) =>{
-    const [formData, setFormData] =useState({ name: movie.name,  body: movie.body,  creator: movie.creator, images: movie.images, video: movie.video })
+    const [formData, setFormData] = useState({ ...movie });
     const [isPending, setIsPending] = useState(false);
-    const navigate = useNavigate()
-    const params = useParams()
+    const navigate = useNavigate();
+    const params = useParams();
     
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const movie = {
-        name: formData.name,
-        body: formData.body,
-        creator: formData.creator,
-        images: formData.images,
-        video: formData.video,
-      };
+      const movie = { ...formData };
       setIsPending(true);
-      await fetch(`http://localhost:4000/movies/${params.id}`, {
+      await fetch(`http://0.0.0.0:4000/movies/${params.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(movie),
-      }).then(() => {
-        console.log(` ${movie.name} was updated in to the db`);
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
         setIsPending(false);
         navigate("/");
       });
@@ -34,11 +29,11 @@ const EditForm  = ({movie}) =>{
     
     const clear = (e) => {
       e.preventDefault();
-      setFormData({ name: movie.name,  body: movie.body,  creator: movie.creator, images: movie.images, video: movie.video });
+      setFormData({ ...movie });
     };
     
-    
     return (
+      <>
       <div className="form">
         <form className="modal-content" onSubmit={handleSubmit}>
           <input value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required />
@@ -53,6 +48,7 @@ const EditForm  = ({movie}) =>{
           <button onClick={clear}>clear</button>
         </form>
       </div>
+      </>
     );
   
   

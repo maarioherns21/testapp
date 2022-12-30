@@ -1,4 +1,6 @@
 import Movies from "../../components/Movies/Movies"
+import React from 'react';
+
 
 const Home = () => {
 

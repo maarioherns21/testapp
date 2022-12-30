@@ -1,12 +1,12 @@
 import Popup from "reactjs-popup"
 import EditForm from "../../../EditForm/EditForm"
 import ReactPlayer from "react-player"
-
+import React from 'react';
 
 
 const MovieItem = ({ movie, handleDelete ,user}) => {
  
-  console.log(user?.username, movie.creator)
+  console.log(user?.result._id, movie.creator)
   
   return (
     <div>
@@ -15,7 +15,7 @@ const MovieItem = ({ movie, handleDelete ,user}) => {
       <h2>{movie.body}</h2>
       <h3>{movie.creator}</h3>
       {movie.video && <ReactPlayer url={movie.video} />}
-      {user?._id === movie?.creator  && (
+      {user?.result._id === movie?.creator  && (
         <div>
           <Popup trigger={<button>Update</button>}>
             <EditForm movie={movie} />

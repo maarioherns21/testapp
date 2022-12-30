@@ -1,17 +1,17 @@
 import express from "express";
-import UCTRL from "../controllers/users.js";
+import { deleteUser, fetchUser, login, profile, signup } from "../controllers/users.js";
 const router = express.Router();
 
 
 
-router.get("/", UCTRL.fetchUser);
+router.get("/", fetchUser);
 
-router.post("/signup", UCTRL.signup);
+router.post("/signup", signup);
 
-router.post("/login", UCTRL.login);
+router.post("/login", login);
 
-router.get("/:username", UCTRL.profile);
+router.get("/:username", profile);
 
-router.delete("/:id", UCTRL.deleteUser);
+router.delete("/:id", deleteUser);
 
 export default router;

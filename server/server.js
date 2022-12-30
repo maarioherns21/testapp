@@ -19,19 +19,15 @@ app.use(cors());
 app.use("/movies", routeIndex);
 app.use("/user", usersIndex);
 
-const SERVER = process.env.CONNECTION_URL;
-
-
+// const SERVER = process.env.CONNECTION_URL;
 
 const PORT = process.env.PORT;
-
-
 
 
 mongoose.set('strictQuery', false);
 
 mongoose
-  .connect(SERVER, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect("mongodb://mongo-db/test123", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Express is listening on Port ${PORT} and connected to DB`);

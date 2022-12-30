@@ -1,9 +1,10 @@
 // import { Root, classes } from "./Styles"
 // import {Card, CardActions, CardContent, Typography, CardMedia} from "@mui/material"
 import {Link} from 'react-router-dom'
+import React from 'react';
+
 
 const MovieCard = ({movie}) => {
-
 
 return (
   <div>

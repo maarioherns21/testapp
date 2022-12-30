@@ -1,7 +1,7 @@
 // import {Grid} from "@mui/material"
 import MovieCard from "./MovieCard";
 // import { Root, classes } from "./Styles";
-
+import React from "react"
 
 
 

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React , { useState } from "react"
 import Pagination from "../Pagination/Pagination"
 import SearchBar from "../SearchBar/SearchBar"
 import useFetch from "../useFetch/useFetch"
@@ -16,8 +16,6 @@ const [moviesPerPage, setMoviesPerPage] = useState(3);
 const lastMovieIndex = currentPage * moviesPerPage;
 const firstMovieIndex = lastMovieIndex - moviesPerPage;
 const currentMovies = movies.slice(firstMovieIndex, lastMovieIndex);
-
-
 
 return (
   <div className="home">

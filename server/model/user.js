@@ -2,9 +2,10 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema
 
 
-const userSchema = new Schema( {
+const userSchema = new Schema(
+  {
     username: String,
-    email: String,
+    email: { type: String, unique: true },
     password: String,
     photoUrl: String,
     bio: String,

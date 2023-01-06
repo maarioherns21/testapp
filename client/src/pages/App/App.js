@@ -9,6 +9,7 @@ import useToken from "../../components/useToken/useToken"
 import SignUpPage from "../SignupPage/SignupPage"
 import LoginPage from "../LoginPage/LoginPage"
 import React from 'react';
+import Profiles from "../Profiles/Profiles"
 
 
 
@@ -26,6 +27,7 @@ if(token) {
             <Route exact path="/*" element={<Home />} />
             <Route exact path="/movie/:id" element={<MovieDetails />}/>
             <Route exact path="/user/:username"   element={<MyMovies logout={logout}/>}/>
+            <Route exact path="/user/profile/:username" element={<Profiles />}  />
             <Route exact path="/form" element={<Form />}/>
        </Routes>
         </BrowserRouter>

@@ -2,14 +2,16 @@ import mongoose from "mongoose";
 const Schema =  mongoose.Schema
 
 
-
 const movieSchema = new Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   name: String,
   body: String,
   creator: String,
   images: String,
+  author: String,
+  rating: Number,
   video: String,
+  creatorImage: String,
   createdAt: {
     type: Date,
     default: new Date(),

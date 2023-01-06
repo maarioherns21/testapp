@@ -8,8 +8,11 @@ const MovieCard = ({movie}) => {
 
 return (
   <div>
+     <Link to={`/user/profile/${movie.creator}`}>
+        <img src={movie.creatorImage} alt={movie.creator} style={{ height:"30px" , borderRadius: "20px", zIndex: "1" , overflow:"auto"}} />
+     </Link>
     <Link to={`/movie/${movie._id}`}>
-      <img src={movie.images} alt={movie.name} />
+      <img src={movie.images} alt={movie.name} style={{ height: "420px"}} />
       <h2>{movie.name}</h2>
     </Link>
   </div>

@@ -5,14 +5,14 @@ import '../Styles.css'
 import React from 'react';
 
 const MovieDetails = () => {
-  const user = JSON.parse(localStorage.getItem("token"))
+  const user = JSON.parse(localStorage.getItem("token"));
   const params = useParams();
   const { movies, isLoading, error } = useFetch();
   const movie = movies.find((movie) => movie._id === params.id);
   const navigate = useNavigate();
 
   const handleDelete = async () => {
-    await fetch(`http://0.0.0.0:4000/movies/${params.id}`, {
+    await fetch(`http://localhost:4000/movies/${params.id}`, {
       method: "DELETE",
     }).then(() => {
       console.log(` ${movie.name} was deleted from DB`);
@@ -24,7 +24,9 @@ const MovieDetails = () => {
     <div className="home">
       <div>{error ? error : null}</div>
       <div>{isLoading ? "Loading..." : ""}</div>
-      {movie && <MovieItem movie={movie} handleDelete={handleDelete} user={user}  />}
+      {movie && (
+        <MovieItem movie={movie} handleDelete={handleDelete} user={user} />
+      )}
     </div>
   );
 };

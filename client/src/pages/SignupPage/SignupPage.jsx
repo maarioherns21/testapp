@@ -16,7 +16,7 @@ const SignUpPage = ({setToken}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = { ...signForm };
-    await fetch("http://0.0.0.0:4000/user/signup", {
+    await fetch("http://localhost:4000/user/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(token),

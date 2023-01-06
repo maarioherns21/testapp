@@ -14,7 +14,7 @@ const EditForm  = ({movie}) =>{
       e.preventDefault();
       const movie = { ...formData };
       setIsPending(true);
-      await fetch(`http://0.0.0.0:4000/movies/${params.id}`, {
+      await fetch(`http://localhost:4000/movies/${params.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(movie),

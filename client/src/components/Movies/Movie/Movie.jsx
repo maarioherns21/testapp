@@ -9,19 +9,20 @@ const Movie = ({ movies, title }) => {
   
   
   return (
-    <div>
+     <div>
       <h1>{title}</h1>
+      <div style={{ display: "flex", justifyContent: "space-around" , flexWrap: "wrap" }}>
       {movies.map((movie) => (
-        <div key={movie._id}>
+        <div key={movie._id}  >
           <MovieCard movie={movie} />
         </div>
       ))}
+      </div>
     </div>
   );
 };
 
 export default Movie
-
 
 
 

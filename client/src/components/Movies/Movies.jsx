@@ -18,7 +18,7 @@ const firstMovieIndex = lastMovieIndex - moviesPerPage;
 const currentMovies = movies.slice(firstMovieIndex, lastMovieIndex);
 
 return (
-  <div className="home">
+  <div>
     <div>{error ? error : null}</div>
     <div>{isLoading ? "Loading..." : ""}</div>
     <SearchBar movies={movies} />

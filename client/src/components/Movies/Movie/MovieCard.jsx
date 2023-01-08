@@ -7,17 +7,17 @@ import React from 'react';
 const MovieCard = ({movie}) => {
 
 return (
-  <div>
+  <div style={{ display: "flex", flexDirection:"column" }}>
      <Link to={`/user/profile/${movie.creator}`}>
-        <img src={movie.creatorImage} alt={movie.creator} style={{ height:"30px" , borderRadius: "20px", zIndex: "1" , overflow:"auto"}} />
+        <img src={movie.creatorImage} alt={movie.creator} style={{ height:"30px" , borderRadius: "50%"}} />
      </Link>
+     <div>
     <Link to={`/movie/${movie._id}`}>
       <img src={movie.images} alt={movie.name} style={{ height: "420px"}} />
       <h2>{movie.name}</h2>
-    </Link>
+    </Link></div>
   </div>
 );
-
     
 }
 
